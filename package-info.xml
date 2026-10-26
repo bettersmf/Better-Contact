@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "https://www.simplemachines.org/xml/package-info">
+<package-info xmlns="https://www.simplemachines.org/xml/package-info" xmlns:smf="https://www.simplemachines.org/">
+	<!-- Historical package id retained so installed Better Profile Contact builds upgrade in place. -->
+	<id>bettersmf:better-profile-contact</id>
+	<name>Better Contact</name>
+	<version>0.1.2</version>
+	<type>modification</type>
+	<install for="2.1 - 2.1.99">
+		<require-file name="Sources/BetterContact.php" destination="$sourcedir" />
+		<require-file name="Themes/default/BetterContact.template.php" destination="$themedir" />
+		<require-file name="Themes/default/BetterContactAdmin.template.php" destination="$themedir" />
+		<require-file name="Themes/default/languages/BetterContact.english.php" destination="$languagedir" />
+		<require-file name="Themes/default/images/admin/better_contact.png" destination="$themes_dir/default/images/admin" />
+		<require-file name="Themes/default/images/admin/big/better_contact.png" destination="$themes_dir/default/images/admin/big" />
+		<database>better_contact_database.php</database>
+		<code>better_contact_install.php</code>
+	</install>
+	<upgrade from="0.1.0,0.1.1,0.1.1a,0.1.0-dev1,0.1.0-dev2,0.1.0-dev2a,0.1.0-dev2b,0.1.0-dev2c,0.1.0-dev3,0.1.0-dev3a,0.1.0-dev3b,0.1.0-dev3c,0.1.1b,0.1.1c" for="2.1 - 2.1.99">
+		<require-file name="Sources/BetterContact.php" destination="$sourcedir" />
+		<require-file name="Themes/default/BetterContact.template.php" destination="$themedir" />
+		<require-file name="Themes/default/BetterContactAdmin.template.php" destination="$themedir" />
+		<require-file name="Themes/default/languages/BetterContact.english.php" destination="$languagedir" />
+		<require-file name="Themes/default/images/admin/better_contact.png" destination="$themes_dir/default/images/admin" />
+		<require-file name="Themes/default/images/admin/big/better_contact.png" destination="$themes_dir/default/images/admin/big" />
+		<database>better_contact_database.php</database>
+		<code>better_contact_install.php</code>
+	</upgrade>
+	<uninstall for="2.1 - 2.1.99">
+		<code>better_contact_install.php</code>
+		<database>better_contact_uninstall_data.php</database>
+		<remove-file name="$sourcedir/BetterContact.php" />
+		<remove-file name="$themedir/BetterContact.template.php" />
+		<remove-file name="$themedir/BetterContactAdmin.template.php" />
+		<remove-file name="$languagedir/BetterContact.english.php" />
+	
+		<remove-file name="$themes_dir/default/images/admin/better_contact.png" />
+		<remove-file name="$themes_dir/default/images/admin/big/better_contact.png" />
+	</uninstall>
+</package-info>
